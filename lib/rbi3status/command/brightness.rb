@@ -15,12 +15,12 @@ module Rbi3status
         current_brightness =`cat #{current_brightness_device}`.to_f
         brightness = (100 - ((max_brightness - current_brightness) / max_brightness) * 100).round(0)
 
-        info = {
+        info = @defaults.merge({
           full_text: "💡 #{brightness}",
           short_text: "💡 #{brightness}",
           name: "brightness",
           instance: "brightness",
-        }.merge(@defaults)
+        })
         if ! @block.nil?
           @block.call(brightness, info)
           encode(info)

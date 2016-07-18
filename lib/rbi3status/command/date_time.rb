@@ -9,13 +9,13 @@ module Rbi3status
 
       def run
         time = Time.now.strftime(@format)
-        info = {
+        info = @defaults.merge({
           full_text: "⏲ #{time}",
           short_text: time,
           name: "time",
           urgent:  false,
           instance: "time",
-        }.merge(@defaults)
+        })
         if ! @block.nil?
           @block.call(time, info)
           encode(info)

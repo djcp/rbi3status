@@ -13,7 +13,8 @@ module Rbi3status
           separator: true,
           color: '#00ff00',
           background: '#1c1c1c',
-          border: '#ee0000'
+          border: '#ee0000',
+          urgent: false
         }.merge!(options)
       end
 

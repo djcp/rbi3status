@@ -12,13 +12,13 @@ module Rbi3status
       def run
         get_upower_info
 
-        info = {
+        info = @defaults.merge({
           full_text: full_message,
           short_text: full_message,
           name: "time",
           urgent:  false,
           instance: "time",
-        }.merge(@defaults)
+        })
         if ! @block.nil?
           @block.call(time, info)
           encode(info)

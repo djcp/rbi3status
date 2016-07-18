@@ -3,13 +3,13 @@ module Rbi3status
     class LoadOne < Base
       def run
         load_one = vmstat.load_average.one_minute
-        info = {
+        info = @defaults.merge({
           full_text: "⚛ #{load_one}",
           short_text: load_one,
           name: "load_one",
           urgent: (load_one > 4) ? true : false,
           instance: "load_one",
-        }.merge(@defaults)
+        })
         if ! @block.nil?
           @block.call(load_one, info)
           encode(info)

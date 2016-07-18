@@ -4,13 +4,13 @@ module Rbi3status
       def run
         volume = get_volume
 
-        info = {
+        info = @defaults.merge({
           full_text: "♬ #{volume}",
           short_text: "♬ #{volume}",
           name: "volume",
           urgent:  false,
           instance: "volume",
-        }.merge(@defaults)
+        })
         if ! @block.nil?
           @block.call(volume, info)
           encode(info)
