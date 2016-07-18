@@ -23,7 +23,10 @@ while (true) do
   puts bat.run + ','
 
   bright = Rbi3status::Command::Brightness.new
-  puts bright.run
+  puts bright.run + ','
+
+  vol = Rbi3status::Command::PulseVolume.new
+  puts vol.run
 
   puts '],'
   sleep 2
