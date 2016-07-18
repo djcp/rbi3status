@@ -20,7 +20,10 @@ while (true) do
   puts time.run + ','
 
   bat = Rbi3status::Command::Upower.new
-  puts bat.run
+  puts bat.run + ','
+
+  bright = Rbi3status::Command::Brightness.new
+  puts bright.run
 
   puts '],'
   sleep 2
