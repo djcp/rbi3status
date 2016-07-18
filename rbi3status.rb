@@ -26,6 +26,9 @@ while (true) do
   puts time.run + ','
 
   bat = Rbi3status::Command::Upower.new
+  bat.config do |time, info|
+    info[:color] = "#ffff00"
+  end
   puts bat.run + ','
 
   vol = Rbi3status::Command::PulseVolume.new

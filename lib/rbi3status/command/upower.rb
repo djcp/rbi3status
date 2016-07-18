@@ -16,7 +16,7 @@ module Rbi3status
           full_text: full_message,
           short_text: full_message,
           name: "time",
-          urgent:  false,
+          urgent:  (percent.to_i < 10) ? true : false,
           instance: "time",
         })
         if ! @block.nil?
