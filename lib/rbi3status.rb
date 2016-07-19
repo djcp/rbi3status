@@ -2,6 +2,7 @@ $stdout.sync = true
 
 module Rbi3status; end
 
+require './lib/rbi3status/harness'
 require './lib/rbi3status/command/base'
 require './lib/rbi3status/command/disk_free_percent'
 require './lib/rbi3status/command/load_one'
