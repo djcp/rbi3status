@@ -2,10 +2,11 @@
 require './lib/rbi3status'
 
 Rbi3status::Command::Base.defaults[:color] = '#ffffff'
+# Rbi3status::Command::Base.defaults[:markup] = 'pango'
 
-status = Rbi3status::Harness.new
+harness = Rbi3status::Harness.new
 
-status.register(
+harness.register(
   Rbi3status::Command::Brightness,
   Rbi3status::Command::Yubikey,
   Rbi3status::Command::LoadOne.new.config {|info, load_one| info[:color] = "#5f87ff" },
@@ -15,4 +16,4 @@ status.register(
   Rbi3status::Command::PulseVolume
 )
 
-status.render_all_in_loop(delay: 3)
+harness.render_all_in_loop(delay: 3)
