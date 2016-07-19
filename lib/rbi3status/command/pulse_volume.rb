@@ -12,7 +12,7 @@ module Rbi3status
           instance: "volume",
         })
         if ! @block.nil?
-          @block.call(volume, info)
+          @block.call(info, volume)
           encode(info)
         else
           encode(info)

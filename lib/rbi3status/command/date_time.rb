@@ -17,7 +17,7 @@ module Rbi3status
           instance: "time",
         })
         if ! @block.nil?
-          @block.call(time, info)
+          @block.call(info, time)
           encode(info)
         else
           encode(info)

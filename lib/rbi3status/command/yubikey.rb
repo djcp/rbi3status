@@ -25,7 +25,7 @@ module Rbi3status
           color: color
         })
         if ! @block.nil?
-          @block.call(state, info)
+          @block.call(info, state)
           encode(info)
         else
           encode(info)

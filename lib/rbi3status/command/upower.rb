@@ -15,12 +15,12 @@ module Rbi3status
         info = @defaults.merge({
           full_text: full_message,
           short_text: full_message,
-          name: "time",
+          name: "time remaining",
           urgent:  (percent.to_i < 10) ? true : false,
-          instance: "time",
+          instance: "time_remaining",
         })
         if ! @block.nil?
-          @block.call(time, info)
+          @block.call(info, time)
           encode(info)
         else
           encode(info)

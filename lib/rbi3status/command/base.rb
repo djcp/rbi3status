@@ -5,19 +5,24 @@ require 'multi_json'
 module Rbi3status
   module Command
     class Base
-      attr_reader :defaults
+      @@defaults = {
+        separator_block_width: 31,
+        separator: true,
+        color: '#ffffff',
+        urgent: false
+      }
+
+      def self.defaults
+        @@defaults
+      end
 
       def initialize(options = {})
-        @defaults = {
-          separator_block_width: 31,
-          separator: true,
-          color: '#ffffff',
-          urgent: false
-        }.merge!(options)
+        @defaults = @@defaults.merge!(options)
       end
 
       def config(&block)
         @block = block
+        self
       end
 
       def vmstat

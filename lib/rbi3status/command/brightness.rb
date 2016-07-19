@@ -22,7 +22,7 @@ module Rbi3status
           instance: "brightness",
         })
         if ! @block.nil?
-          @block.call(brightness, info)
+          @block.call(info, brightness)
           encode(info)
         else
           encode(info)

@@ -11,7 +11,7 @@ module Rbi3status
           instance: "load_one",
         })
         if ! @block.nil?
-          @block.call(load_one, info)
+          @block.call(info, load_one)
           encode(info)
         else
           encode(info)

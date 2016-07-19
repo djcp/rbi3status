@@ -20,7 +20,7 @@ module Rbi3status
           instance: "#{mount}_free",
         })
         if ! @block.nil?
-          @block.call(disk_free_percent, info)
+          @block.call(info, disk_free_percent)
           encode(info)
         else
           encode(info)
