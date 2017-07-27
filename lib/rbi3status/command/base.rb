@@ -26,7 +26,7 @@ module Rbi3status
       end
 
       def vmstat
-        @vmstat ||= Vmstat.snapshot
+        Vmstat.snapshot
       end
 
       def encode(to_encode)

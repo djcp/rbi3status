@@ -1,4 +1,6 @@
 $stdout.sync = true
+require 'fileutils'
+require 'logger'
 
 module Rbi3status; end
 

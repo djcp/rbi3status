@@ -1,6 +1,8 @@
 # rbi3status
 
-A ruby implementation of the i3statusbar protocol
+A ruby implementation of the i3 input bar protocol
+
+## Getting Starte
 
 ## License
 
